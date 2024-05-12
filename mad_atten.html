@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            text-align: center;
+            color: #333; 
+            margin-top: 20px;
+        }
+        h2{
+            text-align: center;
+            color: #666;
+        }
+        .date-input-container {
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+
+        .date-label {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date-input {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .date-input:focus {
+            border-color: #007bff;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333; 
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        button{
+            text-align: center;
+            display: block; 
+            margin: 20px auto; 
+            padding: 10px 20px; 
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Record</h1>
+    <h2>MCA Students</h2>
+    <form id="attendanceForm" action="mad.php" method="post">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Register Number</th>
+                    <th>Name of the Students</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>AARTHI J</td>
+                    <td>
+                        <input type="radio" id="present1" name="attendance[001]" value="present" required>
+                        <label for="present1">Present</label>
+                        <input type="radio" id="absent1" name="attendance[001]" value="absent">
+                        <label for="absent1">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>ABUTHAHIR M</td>
+                    <td>
+                        <input type="radio" id="present2" name="attendance[002]" value="present" required>
+                        <label for="present2">Present</label>
+                        <input type="radio" id="absent2" name="attendance[002]" value="absent">
+                        <label for="absent2">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>AHAMED ABDULLAH M</td>
+                    <td>
+                        <input type="radio" id="present3" name="attendance[003]" value="present" required>
+                        <label for="present3">Present</label>
+                        <input type="radio" id="absent3" name="attendance[003]" value="absent">
+                        <label for="absent3">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>ARAVINDH S</td>
+                    <td>
+                        <input type="radio" id="present4" name="attendance[004]" value="present" required>
+                        <label for="present4">Present</label>
+                        <input type="radio" id="absent4" name="attendance[004]" value="absent">
+                        <label for="absent4">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>BAVITHRA M K</td>
+                    <td>
+                        <input type="radio" id="present5" name="attendance[005]" value="present" required>
+                        <label for="present5">Present</label>
+                        <input type="radio" id="absent5" name="attendance[005]" value="absent">
+                        <label for="absent5">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>BHARATHKUMAAR A</td>
+                    <td>
+                        <input type="radio" id="present6" name="attendance[006]" value="present" required>
+                        <label for="present6">Present</label>
+                        <input type="radio" id="absent6" name="attendance[006]" value="absent">
+                        <label for="absent6">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>007</td>
+                    <td>BLESSY A</td>
+                    <td>
+                        <input type="radio" id="present7" name="attendance[007]" value="present" required>
+                        <label for="present7">Present</label>
+                        <input type="radio" id="absent7" name="attendance[007]" value="absent">
+                        <label for="absent7">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>008</td>
+                    <td>DESIKA R S</td>
+                    <td>
+                        <input type="radio" id="present8" name="attendance[008]" value="present" required>
+                        <label for="present8">Present</label>
+                        <input type="radio" id="absent8" name="attendance[008]" value="absent">
+                        <label for="absent8">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>009</td>
+                    <td>DHARANI DEVI S</td>
+                    <td>
+                        <input type="radio" id="present9" name="attendance[009]" value="present" required>
+                        <label for="present9">Present</label>
+                        <input type="radio" id="absent9" name="attendance[009]" value="absent">
+                        <label for="absent9">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>010</td>
+                    <td>DHARUN P</td>
+                    <td>
+                        <input type="radio" id="present10" name="attendance[010]" value="present" required>
+                        <label for="present10">Present</label>
+                        <input type="radio" id="absent10" name="attendance[010]" value="absent">
+                        <label for="absent10">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>011</td>
+                    <td>FAHMIDHA S</td>
+                    <td>
+                        <input type="radio" id="present11" name="attendance[011]" value="present" required>
+                        <label for="present11">Present</label>
+                        <input type="radio" id="absent11" name="attendance[011]" value="absent">
+                        <label for="absent11">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>012</td>
+                    <td>GAYATHRI B</td>
+                    <td>
+                        <input type="radio" id="present12" name="attendance[012]" value="present" required>
+                        <label for="present12">Present</label>
+                        <input type="radio" id="absent12" name="attendance[012]" value="absent">
+                        <label for="absent12">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>013</td>
+                    <td>HARI KRISHNAN E</td>
+                    <td>
+                        <input type="radio" id="present13" name="attendance[013]" value="present" required>
+                        <label for="present13">Present</label>
+                        <input type="radio" id="absent13" name="attendance[013]" value="absent">
+                        <label for="absent13">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>014</td>
+                    <td>HARINI S</td>
+                    <td>
+                        <input type="radio" id="present14" name="attendance[014]" value="present" required>
+                        <label for="present14">Present</label>
+                        <input type="radio" id="absent14" name="attendance[014]" value="absent">
+                        <label for="absent14">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>015</td>
+                    <td>JEEVAPRIYA S</td>
+                    <td>
+                        <input type="radio" id="present15" name="attendance[015]" value="present" required>
+                        <label for="present15">Present</label>
+                        <input type="radio" id="absent15" name="attendance[015]" value="absent">
+                        <label for="absent15">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>016</td>
+                    <td>KANAGA SAKTHI R</td>
+                    <td>
+                        <input type="radio" id="present16" name="attendance[016]" value="present" required>
+                        <label for="present16">Present</label>
+                        <input type="radio" id="absent16" name="attendance[016]" value="absent">
+                        <label for="absent16">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>017</td>
+                    <td>KANISHKA M</td>
+                    <td>
+                        <input type="radio" id="present17" name="attendance[017]" value="present" required>
+                        <label for="present17">Present</label>
+                        <input type="radio" id="absent17" name="attendance[017]" value="absent">
+                        <label for="absent17">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>018</td>
+                    <td>KEERTHANA S</td>
+                    <td>
+                        <input type="radio" id="present18" name="attendance[018]" value="present" required>
+                        <label for="present18">Present</label>
+                        <input type="radio" id="absent18" name="attendance[018]" value="absent">
+                        <label for="absent18">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>019</td>
+                    <td>KRUSHNA RAMKUMAR R S</td>
+                    <td>
+                        <input type="radio" id="present19" name="attendance[019]" value="present" required>
+                        <label for="present19">Present</label>
+                        <input type="radio" id="absent19" name="attendance[019]" value="absent">
+                        <label for="absent19">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>020</td>
+                    <td>MAHALAKSHMI C</td>
+                    <td>
+                        <input type="radio" id="present20" name="attendance[020]" value="present" required>
+                        <label for="present20">Present</label>
+                        <input type="radio" id="absent20" name="attendance[020]" value="absent">
+                        <label for="absent20">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>021</td>
+                    <td>MEERA FATHIMA M</td>
+                    <td>
+                        <input type="radio" id="present21" name="attendance[021]" value="present" required>
+                        <label for="present21">Present</label>
+                        <input type="radio" id="absent21" name="attendance[021]" value="absent">
+                        <label for="absent21">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>022</td>
+                    <td>MOHANRAJ G</td>
+                    <td>
+                        <input type="radio" id="present22" name="attendance[022]" value="present" required>
+                        <label for="present22">Present</label>
+                        <input type="radio" id="absent22" name="attendance[022]" value="absent">
+                        <label for="absent22">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>023</td>
+                    <td>NANDHINI S</td>
+                    <td>
+                        <input type="radio" id="present23" name="attendance[023]" value="present" required>
+                        <label for="present23">Present</label>
+                        <input type="radio" id="absent23" name="attendance[023]" value="absent">
+                        <label for="absent23">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>024</td>
+                    <td>NANDHU R</td>
+                    <td>
+                        <input type="radio" id="present24" name="attendance[024]" value="present" required>
+                        <label for="present24">Present</label>
+                        <input type="radio" id="absent24" name="attendance[024]" value="absent">
+                        <label for="absent24">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>025</td>
+                    <td>PRABAHARAN S</td>
+                    <td>
+                        <input type="radio" id="present25" name="attendance[025]" value="present" required>
+                        <label for="present25">Present</label>
+                        <input type="radio" id="absent25" name="attendance[025]" value="absent">
+                        <label for="absent25">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>026</td>
+                    <td>PRABHAHARAN S</td>
+                    <td>
+                        <input type="radio" id="present26" name="attendance[026]" value="present" required>
+                        <label for="present26">Present</label>
+                        <input type="radio" id="absent26" name="attendance[026]" value="absent">
+                        <label for="absent26">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>027</td>
+                    <td>PRAVEENA A</td>
+                    <td>
+                        <input type="radio" id="present27" name="attendance[027]" value="present" required>
+                        <label for="present27">Present</label>
+                        <input type="radio" id="absent27" name="attendance[027]" value="absent">
+                        <label for="absent27">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>028</td>
+                    <td>PRAVEENA R</td>
+                    <td>
+                        <input type="radio" id="present28" name="attendance[028]" value="present" required>
+                        <label for="present28">Present</label>
+                        <input type="radio" id="absent28" name="attendance[028]" value="absent">
+                        <label for="absent28">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>029</td>
+                    <td>PREETHA N</td>
+                    <td>
+                        <input type="radio" id="present29" name="attendance[029]" value="present" required>
+                        <label for="present29">Present</label>
+                        <input type="radio" id="absent29" name="attendance[029]" value="absent">
+                        <label for="absent29">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>030</td>
+                    <td>PRIYANGA M</td>
+                    <td>
+                        <input type="radio" id="present30" name="attendance[030]" value="present" required>
+                        <label for="present30">Present</label>
+                        <input type="radio" id="absent30" name="attendance[030]" value="absent">
+                        <label for="absent30">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>031</td>
+                    <td>RAJASHREE A</td>
+                    <td>
+                        <input type="radio" id="present31" name="attendance[031]" value="present" required>
+                        <label for="present31">Present</label>
+                        <input type="radio" id="absent31" name="attendance[031]" value="absent">
+                        <label for="absent31">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>032</td>
+                    <td>RAMKUMAR M</td>
+                    <td>
+                        <input type="radio" id="present32" name="attendance[032]" value="present" required>
+                        <label for="present32">Present</label>
+                        <input type="radio" id="absent32" name="attendance[032]" value="absent">
+                        <label for="absent32">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>033</td>
+                    <td>RAMNARAYAN D</td>
+                    <td>
+                        <input type="radio" id="present33" name="attendance[033]" value="present" required>
+                        <label for="present33">Present</label>
+                        <input type="radio" id="absent33" name="attendance[033]" value="absent">
+                        <label for="absent33">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>034</td>
+                    <td>RAMYAPPRABHA G</td>
+                    <td>
+                        <input type="radio" id="present34" name="attendance[034]" value="present" required>
+                        <label for="present34">Present</label>
+                        <input type="radio" id="absent34" name="attendance[034]" value="absent">
+                        <label for="absent34">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>035</td>
+                    <td>RENGANATHAN S</td>
+                    <td>
+                        <input type="radio" id="present35" name="attendance[035]" value="present" required>
+                        <label for="present35">Present</label>
+                        <input type="radio" id="absent35" name="attendance[035]" value="absent">
+                        <label for="absent35">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>036</td>
+                    <td>SHOBA K</td>
+                    <td>
+                        <input type="radio" id="present36" name="attendance[036]" value="present" required>
+                        <label for="present36">Present</label>
+                        <input type="radio" id="absent36" name="attendance[036]" value="absent">
+                        <label for="absent36">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>037</td>
+                    <td>SINDHUJA J</td>
+                    <td>
+                        <input type="radio" id="present37" name="attendance[037]" value="present" required>
+                        <label for="present37">Present</label>
+                        <input type="radio" id="absent37" name="attendance[037]" value="absent">
+                        <label for="absent37">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>038</td>
+                    <td>SIVA SANTHOSHINI S</td>
+                    <td>
+                        <input type="radio" id="present38" name="attendance[038]" value="present" required>
+                        <label for="present38">Present</label>
+                        <input type="radio" id="absent38" name="attendance[038]" value="absent">
+                        <label for="absent38">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>039</td>
+                    <td>SIYAMALA C</td>
+                    <td>
+                        <input type="radio" id="present39" name="attendance[039]" value="present" required>
+                        <label for="present39">Present</label>
+                        <input type="radio" id="absent39" name="attendance[039]" value="absent">
+                        <label for="absent39">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>040</td>
+                    <td>SNEKA M</td>
+                    <td>
+                        <input type="radio" id="present40" name="attendance[040]" value="present" required>
+                        <label for="present40">Present</label>
+                        <input type="radio" id="absent40" name="attendance[040]" value="absent">
+                        <label for="absent40">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>041</td>
+                    <td>SNEKA PL</td>
+                    <td>
+                        <input type="radio" id="present41" name="attendance[041]" value="present" required>
+                        <label for="present41">Present</label>
+                        <input type="radio" id="absent41" name="attendance[041]" value="absent">
+                        <label for="absent41">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>042</td>
+                    <td>SRIVARDHANI K</td>
+                    <td>
+                        <input type="radio" id="present42" name="attendance[042]" value="present" required>
+                        <label for="present42">Present</label>
+                        <input type="radio" id="absent42" name="attendance[042]" value="absent">
+                        <label for="absent42">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>043</td>
+                    <td>SURYA T</td>
+                    <td>
+                        <input type="radio" id="present43" name="attendance[043]" value="present" required>
+                        <label for="present43">Present</label>
+                        <input type="radio" id="absent43" name="attendance[043]" value="absent">
+                        <label for="absent43">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>044</td>
+                    <td>SWATHI E</td>
+                    <td>
+                        <input type="radio" id="present44" name="attendance[044]" value="present" required>
+                        <label for="present44">Present</label>
+                        <input type="radio" id="absent44" name="attendance[044]" value="absent">
+                        <label for="absent44">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>045</td>
+                    <td>SWETHA K</td>
+                    <td>
+                        <input type="radio" id="present45" name="attendance[045]" value="present" required>
+                        <label for="present45">Present</label>
+                        <input type="radio" id="absent45" name="attendance[045]" value="absent">
+                        <label for="absent45">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>046</td>
+                    <td>SWETHA M</td>
+                    <td>
+                        <input type="radio" id="present46" name="attendance[046]" value="present" required>
+                        <label for="present46">Present</label>
+                        <input type="radio" id="absent46" name="attendance[046]" value="absent">
+                        <label for="absent46">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>047</td>
+                    <td>TAMILSELVAN K</td>
+                    <td>
+                        <input type="radio" id="present47" name="attendance[047]" value="present" required>
+                        <label for="present47">Present</label>
+                        <input type="radio" id="absent47" name="attendance[047]" value="absent">
+                        <label for="absent47">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>048</td>
+                    <td>THAIYALNAYAKI A</td>
+                    <td>
+                        <input type="radio" id="present48" name="attendance[048]" value="present" required>
+                        <label for="present48">Present</label>
+                        <input type="radio" id="absent48" name="attendance[048]" value="absent">
+                        <label for="absent48">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>049</td>
+                    <td>THARANI BALAN J</td>
+                    <td>
+                        <input type="radio" id="present49" name="attendance[049]" value="present" required>
+                        <label for="present49">Present</label>
+                        <input type="radio" id="absent49" name="attendance[049]" value="absent">
+                        <label for="absent49">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>050</td>
+                    <td>VIJAYARAJESWARI V</td>
+                    <td>
+                        <input type="radio" id="present50" name="attendance[050]" value="present" required>
+                        <label for="present50">Present</label>
+                        <input type="radio" id="absent50" name="attendance[050]" value="absent">
+                        <label for="absent50">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>051</td>
+                    <td>VINEETH T</td>
+                    <td>
+                        <input type="radio" id="present51" name="attendance[051]" value="present" required>
+                        <label for="present51">Present</label>
+                        <input type="radio" id="absent51" name="attendance[051]" value="absent">
+                        <label for="absent51">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>052</td>
+                    <td>VINODHA S</td>
+                    <td>
+                        <input type="radio" id="present52" name="attendance[052]" value="present" required>
+                        <label for="present52">Present</label>
+                        <input type="radio" id="absent52" name="attendance[052]" value="absent">
+                        <label for="absent52">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>053</td>
+                    <td>VISHALI S</td>
+                    <td>
+                        <input type="radio" id="present53" name="attendance[053]" value="present" required>
+                        <label for="present53">Present</label>
+                        <input type="radio" id="absent53" name="attendance[053]" value="absent">
+                        <label for="absent53">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>054</td>
+                    <td>YOGINI K</td>
+                    <td>
+                        <input type="radio" id="present54" name="attendance[054]" value="present" required>
+                        <label for="present54">Present</label>
+                        <input type="radio" id="absent54" name="attendance[054]" value="absent">
+                        <label for="absent54">Absent</label><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>055</td>
+                    <td>YUVASRI P</td>
+                    <td>
+                        <input type="radio" id="present55" name="attendance[055]" value="present" required>
+                        <label for="present55">Present</label>
+                        <input type="radio" id="absent55" name="attendance[055]" value="absent">
+                        <label for="absent55">Absent</label><br><br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">Submit Attendance</button>
+    </form>
+
+    <script>
+       document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+            // No need to prevent default form submission
+        });
+        
+    </script>
+</body>
+</html>
+

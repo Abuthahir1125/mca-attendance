@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students Login</title>
+<style>
+   body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+    }
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 12px 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        width: calc(100% - 20px);
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 12px 0;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="login-container">
+    <h2>Students Login</h2>
+    <form id="login-form">
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validate username and password (this is just a basic example)
+        if (username === "student" && password === "password") {
+            // Redirect to attendance.html
+            window.location.href = "attendance.html";
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    });
+</script>
+</body>
+</html>

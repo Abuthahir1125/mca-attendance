@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Dashboard</title>
+<style>
+    /* Your CSS styles for the staff dashboard */
+    table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333; 
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+</style>
+</head>
+<body>
+    <h1>Welcome !</h1>
+
+    <!-- Display Staff Details -->
+    <h2>Staff Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STAFF NAME'S</th>
+                <th>SUBJECT TITLE</th>
+                <th>SUBJECT CODE</th>
+                <th>VIEW SYLLABUS</th>
+                <th>MARK STUDENT'S ATTENDANCE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>MR.G.KANAGASABAPATHY(GKS)</td>
+                <td>FULL STACK WEB DEVELOPMENT(FWD)</TD>
+                <td>MC4201</td>
+                <td><a href="fwd.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="fwd_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>DR.R.KABILAN(RKN)</td>
+                <td>ADVANCED DATABASE TECHNOLOGY(ADT)</TD>
+                <td>MC4202</td>
+                <td><a href="adt.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="adt_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>MR.R.RAJA(RRA)</td>
+                <td>CLOUD COMPUTING TECHNOLOGY(CCT)</TD>
+                <td>MC4203</td>
+                <td><a href="cct.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="cct_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>MR.F.MATHEW PHILIP(FMP)</td>
+                <td>MOBILE APPLICATION DEVELOPMENT(MAD)</TD>
+                <td>MC4204</td>
+                <td><a href="mad.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="mad_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>MR.S.THIRUVENGADAM(STM)</td>
+                <td>CYBER SECURITY(CS)</TD>
+                <td>MC4205</td>
+                <td><a href="cs.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="cs_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>DR.M.APPAS ALI(MAA)</td>
+                <td>PROFESSIONAL ETHICS IN IT(PEIT)</TD>
+                <td>MC4002</td>
+                <td><a href="peit.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="peit_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>DR.R.KABILAN(RKN)</td>
+                <td>ADVANCED DATABASE TECHNOLOGY LABORATORY</TD>
+                <td>MC4211</td>
+                <td><a href="adtl.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="adtl_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+            <tr>
+                <td>MR.G.KANAGASABAPATHY(GKS)</td>
+                <td>FULL STACK WEB DEVELOPMENT LABORATORY</TD>
+                <td>MC4212</td>
+                <td><a href="fwdl.html" onclick="redirectToSubjectDetails('SYLLABUS')">SYLLABUS</a></td>
+                <td><a href="fwdl_atten.html" onclick="redirectToSubjectDetails('ATTENDANCE')">ATTENDANCE</a></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
